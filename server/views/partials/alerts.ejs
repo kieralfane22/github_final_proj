@@ -1,0 +1,22 @@
+<% if (typeof alerts !== 'undefined') { %>
+  <% alerts.forEach(alert => { %>
+    <div class="alert alert-<%= alert.type %> alert-dismissible fade show mt-3" role="alert">
+      <strong><%= alert.type.toUpperCase() %>!</strong> <%= alert.message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% }); %>
+<% } %>
+
+<% if (typeof error !== 'undefined') { %>
+  <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+    <strong>ERROR!</strong> <%= error %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<% if (typeof success !== 'undefined') { %>
+  <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+    <strong>SUCCESS!</strong> <%= success %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
